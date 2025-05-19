@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    ul li img{
+        height: 200px;
+        width: 200px;
+    }
+</style>
+<body>
+    <h1>Events In JavaScript</h1>
+    <div id="image">
+        <ul>
+            <li><img src="https://images.pexels.com/photos/1144176/pexels-photo-1144176.jpeg?auto=compress&cs=tinysrgb&w=600" id="river" alt=""></li>
+            <li><img src="https://images.pexels.com/photos/933054/pexels-photo-933054.jpeg?auto=compress&cs=tinysrgb&w=600" id="mountain" alt=""></li>
+            <li><img src="https://images.pexels.com/photos/53435/tree-oak-landscape-view-53435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" id="tree" alt=""></li> 
+        </ul>
+    </div>
+    <script>
+        document.getElementById("river").addEventListener('click', function(e){
+            // console.log("River clicked");
+        },false) //already wo false hota h
+
+         document.getElementById("tree").addEventListener('click', function(e){
+            // alert("Tree Clicked");
+            e.stopPropagation()   //inner aur outer element ko bubble hone se bachata h
+            e.preventDefault()    //changing the default behaviour of element
+        },false);
+
+        const image = document.getElementById("image")
+        image.addEventListener('click', function(e){
+            // console.log(e.target.tagName) 
+            console.log(e.target.id) //showing id from the element
+            let removeit = e.target.parentNode
+            removeit.remove();  //Removing Element
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: #212121;
+            color: orange;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .clock{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .btn{
+            padding: 10px;
+            width: 100px;
+            border: none;
+            border: 1px solid orange;
+        }
+    </style>
+</head>
+<body>
+   <div class="clock">
+     <h2>Local Time</h2>
+    <button class="btn"></button>
+   </div>
+   <script>
+
+    const btn = document.querySelector(".btn")
+    setInterval(function() {
+        let date = new Date();
+        btn.innerHTML = date.toLocaleTimeString();
+    }, 1000 );
+   </script>
+</body>
+</html>

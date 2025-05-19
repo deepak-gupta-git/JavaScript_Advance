@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-1</title>
+    <style>
+        .btn{
+            border: 2px solid black;
+            padding: 20px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 50px;
+            cursor: pointer;
+        }
+        #red{
+            background-color: red;
+        }
+        #blue{
+            background-color: blue;
+        }
+
+         #yellow{
+            background-color: yellow;
+        }
+
+         #green{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="head">
+         <h1 >Color Changer</h1>
+         <span class="btn" id="red">Red</span>
+         <span class="btn" id="blue">Blue</span>
+         <span class="btn" id="yellow">Yellow</span>
+         <span class="btn" id="green">Green</span>
+    </div>
+
+    <script>
+        const btns = document.querySelectorAll(".btn")
+        const body = document.querySelector("body")
+
+        btns.forEach(function (b) {
+            b.addEventListener('click', function(e) {
+                if(e.target.id === 'red'){
+                    body.style.background = e.target.id
+                }
+                  if(e.target.id === 'blue'){
+                    body.style.background = e.target.id
+                }
+                  if(e.target.id === 'yellow'){
+                    body.style.background = e.target.id
+                }
+                  if(e.target.id === 'green'){
+                    body.style.background = e.target.id
+                }
+            })
+        })
+    </script>
+</body>
+</html>

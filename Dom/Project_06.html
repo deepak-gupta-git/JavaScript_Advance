@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        color: white;
+    }
+    button{
+        background-color: black;
+        padding: 10px;
+        width: 100px;
+        border: none;
+        border-radius: 10px;
+        font-size: 20px;
+    }
+</style>
+<body>
+    <h1 style="background-color: black; padding:6px; border-radius: 20px ;">Ultimate color</h1>
+    <div class="body">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+    <script>
+        const randomColor = function () {
+            const hex = '0123456789ABCDEF';
+            let color = '#';
+            for(let i=0; i<6; i++){
+                color += hex[Math.floor(Math.random()* 16)];
+            } 
+            return color;
+        };
+       console.log(randomColor());
+
+        // const body = document.getElementsByClassName("body")
+       
+       let interValid;
+       const startChangingColor = function(){
+        interValid = setInterval(changebycolor,1000);
+        function changebycolor (){
+            document.body.style.backgroundColor = randomColor();
+        }
+       }
+       const stopChanging = function (){
+        clearInterval(interValid);
+        interValid=null;
+       }
+
+       document.querySelector("#start").addEventListener('click', startChangingColor);
+       document.querySelector("#stop").addEventListener('click', stopChanging);
+       
+    </script>
+</body>
+</html>

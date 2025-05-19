@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+</head>
+<body>
+    <h1>Creating Elements</h1>
+    <h2 class="h2">Hello</h2>
+    <ul class="language">
+        <li>Cpp</li>
+    </ul>
+    <script>
+        function addLanguage(langname){
+        const li = document.createElement('li');
+        li.innerHTML = langname
+        document.querySelector('.language').appendChild(li)
+        }
+        addLanguage("Java")
+        addLanguage("golang")
+
+
+        //Creating Element through DOM Manupulation
+        function makingH2 (lang) {
+            const h2 = document.createElement('h2');
+            h2.innerHTML = lang
+            h2.style.background = "green"
+            h2.style.color = "yellow"
+            h2.style.padding = "5px"
+            h2.style.borderRadius = "10px"
+            h2.style.margin = "10px"
+            document.querySelector('h2').appendChild(h2)
+        }
+        makingH2("Cpp")
+        makingH2("Python")
+        makingH2("Golang")
+        makingH2("Java")
+        makingH2("JavaScript")
+
+        // const h2 = document.createElement('h2');
+        // h2.innerHTML = "Kumar";
+        // h2.style.backgroundColor = "green"
+        // h2.style.color = "yellow"
+        // h2.style.padding = "5px"
+        // h2.style.borderRadius = "5px"
+        // document.querySelector(".h2").appendChild(h2)
+
+
+        //edit 
+        const firstlang = document.querySelector('li:last-child')
+        firstlang.outerHTML = '<li>TypeScript</li>'
+
+        //remove
+        const lang = document.querySelector('li:last-child')
+        lang.remove();
+
+
+    </script>
+</body>
+</html>
